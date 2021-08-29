@@ -28,7 +28,6 @@ const createManifest = (dependency) => ({
         plugin: './app/songs/v1',
         options: {
           service: dependency.resolve('songsService'),
-          validator: dependency.resolve('songsValidator'),
         },
       },
     ],

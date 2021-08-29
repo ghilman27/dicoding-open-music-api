@@ -22,15 +22,6 @@ const Config = {
       type: 'class',
       path: './services/SongsService.js',
     },
-
-    /**
-     * DATA VALIDATOR OBJECTS
-     */
-    {
-      name: 'songsValidator',
-      type: 'value',
-      path: './validators/SongsValidator.js',
-    },
   ],
 };
 
