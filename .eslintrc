@@ -13,5 +13,5 @@
         "no-console": "off",
         "no-underscore-dangle": [1, { "allowAfterThis": true }]
     },
-    "parser": "@babel/eslint-parser"
+    "parser": "babel-eslint"
 }
