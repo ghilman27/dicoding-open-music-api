@@ -1,5 +1,5 @@
+const Boom = require('@hapi/boom');
 const MESSAGES = require('../../../config/messages');
-const NotFoundError = require('../../../exceptions/NotFoundError');
 
 class SongsHandler {
   constructor({ service }) {
@@ -25,7 +25,7 @@ class SongsHandler {
     const song = await this._service.getSongById(request.params.id);
 
     if (!song) {
-      throw new NotFoundError(MESSAGES.SONGS_GET_NOT_FOUND);
+      throw Boom.notFound(MESSAGES.SONGS_GET_NOT_FOUND);
     }
 
     return { data: { song } };
@@ -38,7 +38,7 @@ class SongsHandler {
     );
 
     if (!songId) {
-      throw new NotFoundError(MESSAGES.SONGS_PUT_NOT_FOUND);
+      throw Boom.notFound(MESSAGES.SONGS_PUT_NOT_FOUND);
     }
 
     return { message: MESSAGES.SONGS_PUT_SUCCESS };
@@ -48,7 +48,7 @@ class SongsHandler {
     const songId = await this._service.deleteSongById(request.params.id);
 
     if (!songId) {
-      throw new NotFoundError(MESSAGES.SONGS_DELETE_NOT_FOUND);
+      throw Boom.notFound(MESSAGES.SONGS_DELETE_NOT_FOUND);
     }
 
     return { message: MESSAGES.SONGS_DELETE_SUCCESS };
