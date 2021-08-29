@@ -34,7 +34,7 @@ class SongsModel extends BaseModel {
     const result = await this._db.query(
       'SELECT id, title, performer FROM songs',
     );
-    return result.rows.map(this._mapQueryResultToModel);
+    return result.rows;
   };
 
   getById = async (id) => {
