@@ -40,6 +40,13 @@ const createManifest = (dependency) => ({
           service: dependency.resolve('authenticationsService'),
         },
       },
+      {
+        plugin: './app/playlists/v1',
+        options: {
+          service: dependency.resolve('playlistsService'),
+          auth: Config.authStrategy.name,
+        },
+      },
     ],
   },
 });

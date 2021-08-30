@@ -63,6 +63,11 @@ const Config = {
       type: 'class',
       path: './models/postgres/AuthenticationsModel.js',
     },
+    {
+      name: 'playlistsModel',
+      type: 'class',
+      path: './models/postgres/PlaylistsModel.js',
+    },
 
     /**
      * BUSINESS LOGIC SERVICES
@@ -81,6 +86,11 @@ const Config = {
       name: 'authenticationsService',
       type: 'class',
       path: './services/AuthenticationsService.js',
+    },
+    {
+      name: 'playlistsService',
+      type: 'class',
+      path: './services/PlaylistsService.js',
     },
   ],
 };

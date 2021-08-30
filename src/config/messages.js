@@ -24,4 +24,19 @@ module.exports = {
   AUTH_REFRESH_TOKEN_NOT_FOUND: 'Refresh token tidak ditemukan',
   AUTH_REFRESH_TOKEN_INVALID_SIGNATURE: 'Refresh token signature tidak valid',
   AUTH_LOGOUT_SUCCESS: 'Refresh token berhasil dihapus',
+
+  // playlists messages
+  PLAYLISTS_POST_PLAYLIST_SUCCESS: 'Playlist berhasil ditambahkan',
+  PLAYLISTS_DELETE_PLAYLIST_SUCCESS: 'Playlist berhasil ditambahkan',
+  PLAYLISTS_POST_SONG_SUCCESS: 'Lagu berhasil ditambahkan ke playlist',
+  PLAYLISTS_PLAYLIST_NOT_FOUND: 'Playlist tidak ditemukan',
+  PLAYLISTS_PLAYLIST_FORBIDDEN: 'Anda tidak berhak mengakses resource ini',
+  PLAYLISTS_SONG_NOT_FOUND: 'Lagu tidak ditemukan',
+
+  // // collaborations messages
+  // COLLABORATIONS_POST_SUCCESS: 'Kolaborasi berhasil ditambahkan',
+  // COLLABORATIONS_DELETE_SUCCESS: 'Kolaborasi berhasil dihapus',
+  // COLLABORATIONS_PLAYLIST_NOT_FOUND: 'Playlist tidak ditemukan',
+  // COLLABORATIONS_PLAYLIST_FORBIDDEN: 'Anda tidak berhak mengakses resource ini',
+  // COLLABORATIONS_COLLABORATION_NOT_FOUND: 'Playlist tidak ditemukan',
 };
