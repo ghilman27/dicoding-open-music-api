@@ -105,9 +105,9 @@ class PlaylistHandler {
     if (error instanceof Exceptions.NotPlaylistOwner) {
       return Boom.forbidden(MESSAGES.PLAYLISTS_PLAYLIST_FORBIDDEN);
     }
-    // if (error instanceof Exceptions.NotCollaborator) {
-    //   return Boom.forbidden(MESSAGES.PLAYLISTS_PLAYLIST_FORBIDDEN);
-    // }
+    if (error instanceof Exceptions.NotCollaborator) {
+      return Boom.forbidden(MESSAGES.PLAYLISTS_PLAYLIST_FORBIDDEN);
+    }
 
     // Uncaught Error
     return error;

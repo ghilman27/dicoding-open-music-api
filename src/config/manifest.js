@@ -47,6 +47,13 @@ const createManifest = (dependency) => ({
           auth: Config.authStrategy.name,
         },
       },
+      {
+        plugin: './app/collaborations/v1',
+        options: {
+          service: dependency.resolve('playlistsService'),
+          auth: Config.authStrategy.name,
+        },
+      },
     ],
   },
 });

@@ -30,13 +30,11 @@ module.exports = {
   PLAYLISTS_DELETE_PLAYLIST_SUCCESS: 'Playlist berhasil ditambahkan',
   PLAYLISTS_POST_SONG_SUCCESS: 'Lagu berhasil ditambahkan ke playlist',
   PLAYLISTS_PLAYLIST_NOT_FOUND: 'Playlist tidak ditemukan',
-  PLAYLISTS_PLAYLIST_FORBIDDEN: 'Anda tidak berhak mengakses resource ini',
+  PLAYLISTS_PLAYLIST_FORBIDDEN: 'Anda tidak berhak mengakses playlist',
   PLAYLISTS_SONG_NOT_FOUND: 'Lagu tidak ditemukan',
 
-  // // collaborations messages
-  // COLLABORATIONS_POST_SUCCESS: 'Kolaborasi berhasil ditambahkan',
-  // COLLABORATIONS_DELETE_SUCCESS: 'Kolaborasi berhasil dihapus',
-  // COLLABORATIONS_PLAYLIST_NOT_FOUND: 'Playlist tidak ditemukan',
-  // COLLABORATIONS_PLAYLIST_FORBIDDEN: 'Anda tidak berhak mengakses resource ini',
-  // COLLABORATIONS_COLLABORATION_NOT_FOUND: 'Playlist tidak ditemukan',
+  // collaborations messages
+  COLLABORATIONS_POST_SUCCESS: 'Kolaborasi berhasil ditambahkan',
+  COLLABORATIONS_DELETE_SUCCESS: 'Kolaborasi berhasil dihapus',
+  COLLABORATIONS_NOT_FOUND: 'Kolaborasi tidak ditemukan',
 };

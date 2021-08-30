@@ -104,6 +104,43 @@ class PlaylistsModel extends BaseModel {
 
     return result.rows[0].id;
   }
+
+  async addCollaboration(playlistId, userId) {
+    const id = `collab-${this._generateId()}`;
+
+    const query = {
+      text: 'INSERT INTO collaborations VALUES($1, $2, $3) RETURNING id',
+      values: [id, playlistId, userId],
+    };
+
+    const result = await this._db.query(query);
+    return result.rows[0].id;
+  }
+
+  async isCollaborationExists(playlistId, userId) {
+    const query = {
+      text: 'SELECT id FROM collaborations WHERE playlist_id = $1 AND user_id = $2',
+      values: [playlistId, userId],
+    };
+
+    const result = await this._db.query(query);
+    return result.rowCount !== 0;
+  }
+
+  async deleteCollaboration(playlistId, userId) {
+    const query = {
+      text: 'DELETE FROM collaborations WHERE playlist_id = $1 AND user_id = $2 RETURNING id',
+      values: [playlistId, userId],
+    };
+
+    const result = await this._db.query(query);
+
+    if (!result.rowCount) {
+      return null;
+    }
+
+    return result.rows[0].id;
+  }
 }
 
 module.exports = PlaylistsModel;
