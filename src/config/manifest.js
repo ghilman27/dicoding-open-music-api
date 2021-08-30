@@ -1,21 +1,19 @@
+const Config = require('./config');
+
 const createManifest = (dependency) => ({
-  server: {
-    port: process.env.PORT || 5000,
-    host: process.env.HOST || 'localhost',
-    routes: {
-      cors: {
-        origin: ['*'],
-      },
-      validate: {
-        // pass the error to the next lifecycle
-        failAction: (req, h, validationError) => validationError,
-      },
-    },
-  },
+  server: Config.server,
   register: {
     plugins: [
       /**
-       * COMMON PLUGINS
+       * AUTHENTICATION STRATEGY
+       */
+      {
+        plugin: './plugins/jwtAuthStrategy',
+        options: Config.authStrategy,
+      },
+
+      /**
+       * PRE RESPONSE HANDLER
        */
       {
         plugin: './plugins/onPreResponse',
@@ -28,6 +26,32 @@ const createManifest = (dependency) => ({
         plugin: './app/songs/v1',
         options: {
           service: dependency.resolve('songsService'),
+        },
+      },
+      {
+        plugin: './app/users/v1',
+        options: {
+          service: dependency.resolve('usersService'),
+        },
+      },
+      {
+        plugin: './app/authentications/v1',
+        options: {
+          service: dependency.resolve('authenticationsService'),
+        },
+      },
+      {
+        plugin: './app/playlists/v1',
+        options: {
+          service: dependency.resolve('playlistsService'),
+          auth: Config.authStrategy.name,
+        },
+      },
+      {
+        plugin: './app/collaborations/v1',
+        options: {
+          service: dependency.resolve('playlistsService'),
+          auth: Config.authStrategy.name,
         },
       },
     ],
