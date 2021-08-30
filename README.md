@@ -27,6 +27,9 @@ Description of each variables
 | PGDATABASE | Postgres database |
 | PGUSER | Postgres username |
 | PGPASSWORD | Postgres password |
+| ACCESS_TOKEN_KEY | JWT access token key |
+| REFRESH_TOKEN_KEY | JWT refresh token key |
+| ACCESS_TOKEN_AGE | JWT token expiration in seconds |
 
 ### Install all dependencies
 ```bash
