@@ -12,7 +12,7 @@ class SongsModel extends BaseModel {
     const insertedAt = new Date().toISOString();
 
     const query = {
-      text: 'INSERT INTO songs VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id',
+      text: 'INSERT INTO songs VALUES($1, $2, $3, $4, $5, $6, $7, $7) RETURNING id',
       values: [
         id,
         title,
@@ -20,7 +20,6 @@ class SongsModel extends BaseModel {
         performer,
         genre,
         duration,
-        insertedAt,
         insertedAt,
       ],
     };

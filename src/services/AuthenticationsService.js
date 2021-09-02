@@ -9,7 +9,6 @@ class AuthenticationsService {
   }
 
   async login(username, password) {
-    console.log('login jalan');
     const userId = await this._verifyCredential(username, password);
     return this._createTokens({ id: userId });
   }
