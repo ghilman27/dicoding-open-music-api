@@ -52,9 +52,9 @@ If you have docker installed on your machine, just type this command:
 docker-compose up -d
 ```
 It will setup and run several infrastructures required for this app to run in your local machine (`localhost`), including:
-- PostgreSQL Database and [PG Admin Web UI](localhost:8082)
-- RabbitMQ Server and [Management Web UI](localhost:15672)
-- Redis Server and [Redis Commander Web UI](localhost:8081)
+- PostgreSQL Database and [PG Admin Web UI](http://localhost:8082)
+- RabbitMQ Server and [Management Web UI](http://localhost:15672)
+- Redis Server and [Redis Commander Web UI](http://localhost:8081)
 
 You would also need to setup your own AWS S3 Bucket Instance before running this app.
 
