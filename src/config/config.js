@@ -46,6 +46,33 @@ const Config = {
     },
 
     /**
+     * MESSAGE BROKER
+     */
+    {
+      name: 'messageBroker',
+      type: 'value',
+      path: './lib/rabbitmq.js',
+    },
+
+    /**
+     * FILE / BLOB STORAGE CLIENT
+     */
+    {
+      name: 'blobStorage',
+      type: 'class',
+      path: './lib/s3.js',
+    },
+
+    /**
+     * CACHE CLIENT
+     */
+    {
+      name: 'cacheClient',
+      type: 'class',
+      path: './lib/redis.js',
+    },
+
+    /**
      * DATA ACCESS OBJECTS
      */
     {
@@ -91,6 +118,21 @@ const Config = {
       name: 'playlistsService',
       type: 'class',
       path: './services/PlaylistsService.js',
+    },
+    {
+      name: 'producerService',
+      type: 'class',
+      path: './services/ProducerService.js',
+    },
+    {
+      name: 'storageService',
+      type: 'class',
+      path: './services/StorageService.js',
+    },
+    {
+      name: 'cacheService',
+      type: 'class',
+      path: './services/CacheService.js',
     },
   ],
 };

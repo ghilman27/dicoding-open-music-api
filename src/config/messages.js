@@ -27,7 +27,7 @@ module.exports = {
 
   // playlists messages
   PLAYLISTS_POST_PLAYLIST_SUCCESS: 'Playlist berhasil ditambahkan',
-  PLAYLISTS_DELETE_PLAYLIST_SUCCESS: 'Playlist berhasil ditambahkan',
+  PLAYLISTS_DELETE_PLAYLIST_SUCCESS: 'Playlist berhasil dihapus',
   PLAYLISTS_POST_SONG_SUCCESS: 'Lagu berhasil ditambahkan ke playlist',
   PLAYLISTS_PLAYLIST_NOT_FOUND: 'Playlist tidak ditemukan',
   PLAYLISTS_PLAYLIST_FORBIDDEN: 'Anda tidak berhak mengakses playlist',
@@ -37,4 +37,7 @@ module.exports = {
   COLLABORATIONS_POST_SUCCESS: 'Kolaborasi berhasil ditambahkan',
   COLLABORATIONS_DELETE_SUCCESS: 'Kolaborasi berhasil dihapus',
   COLLABORATIONS_NOT_FOUND: 'Kolaborasi tidak ditemukan',
+
+  // exports messages;
+  EXPORTS_PLAYLIST_SUCCESS: 'Permintaan Anda sedang kami proses',
 };

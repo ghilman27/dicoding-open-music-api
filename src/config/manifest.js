@@ -5,6 +5,13 @@ const createManifest = (dependency) => ({
   register: {
     plugins: [
       /**
+       * STATIC FILES AND DIRECTORIES SUPPORT
+       */
+      {
+        plugin: '@hapi/inert',
+      },
+
+      /**
        * AUTHENTICATION STRATEGY
        */
       {
@@ -52,6 +59,19 @@ const createManifest = (dependency) => ({
         options: {
           service: dependency.resolve('playlistsService'),
           auth: Config.authStrategy.name,
+        },
+      },
+      {
+        plugin: './app/exports/v1',
+        options: {
+          service: dependency.resolve('playlistsService'),
+          auth: Config.authStrategy.name,
+        },
+      },
+      {
+        plugin: './app/uploads/v1',
+        options: {
+          service: dependency.resolve('storageService'),
         },
       },
     ],

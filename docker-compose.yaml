@@ -1,0 +1,56 @@
+version: '3.3'
+services:
+  postgres:
+    image: postgres:13.4-alpine
+    container_name: postgres
+    ports:
+      - ${PGPORT}:5432
+    environment: 
+      POSTGRES_DB: ${PGDATABASE}
+      POSTGRES_USER: ${PGUSER}
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+    networks:
+      - dicoding_open_music
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - 15672:15672
+      - ${RABBITMQ_PORT}:5672
+
+  redis:
+    image: redis:5.0-alpine
+    container_name: redis
+    ports:
+      - ${REDIS_PORT}:6379
+    networks:
+      - dicoding_open_music
+
+  redis-commander:
+    container_name: redis-commander
+    image: rediscommander/redis-commander:latest
+    environment:
+      REDIS_HOST: redis
+    depends_on: 
+      - redis
+    ports:
+      - 8081:8081
+    networks:
+      - dicoding_open_music
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    depends_on: 
+      - postgres
+    ports:
+      - 8082:80
+    networks:
+      - dicoding_open_music
+
+networks:
+  dicoding_open_music:
